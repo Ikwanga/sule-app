@@ -272,7 +272,7 @@ a {
   top: 40px;
   left: 40px;
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   max-width: 90%;
 }
 
@@ -361,20 +361,39 @@ a {
   }
 
   .welcome-text {
-    top: 20px;
-    left: 20px;
-    font-size: 18px;
-    max-width: 95%;
-  }
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  color: white;
+  font-size: 4vw;
+  max-width: 80vw;
+}
+
 
   .typewriter-container {
-    max-width: 90%;
+    max-width: 100vw;
     white-space: normal;
   }
 
-  .bottom-right-quote {
-    bottom: 20px;
-    right: 20px;
-    font-size: 14px;
+  .typewriter-line {
+    font-size: 3vw;
   }
+}
+.course-link {
+  color: #c57cff;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.course-link:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, orange 0%, #ffb84d 100%);
+  border-color: #ffb84d;
+  transform: scale(1.06);
+  cursor: pointer;
 }
