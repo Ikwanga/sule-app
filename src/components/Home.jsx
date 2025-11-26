@@ -31,13 +31,13 @@ export default function Home() {
 
       {/* TOP LEFT WELCOME BOX */}
       <div className="welcome-text">
-        <h3 style={{ color: "magenta", margin: 0 }}>Hi!</h3>
+        <h3 style={{ color: "#c57cff", margin: 0 }}>Hi!</h3>
         <div className="typewriter-container">
           <span className="typewriter-line line1">
           Welcome to my website! I created this to learn and to tell...
           </span>
           <span className="typewriter-line line2">
-        ...to learn how to code and to tell what I have done.
+        ...to learn how to code and to tell of my endeavors.
         </span>
         </div>
       </div>
