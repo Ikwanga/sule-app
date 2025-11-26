@@ -11,17 +11,12 @@ export default function Header() {
         </Link>
         <h1 className="header-title">Portfolio Dashboard</h1>
       </div>
-
-      {/* Full Navigation (visible on large screens only) */}
       <nav className="header-nav">
-        <Link to="/courses">Courses</Link>
+        <Link to="/courses">Relevant Courses</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/interests">Interests</Link>
-        <Link to="/current">Current</Link>
         <Link to="/experience">Experience</Link>
       </nav>
-
-      {/* Hamburger Menu (visible on small screens) */}
       <MenuButton />
     </header>
   );

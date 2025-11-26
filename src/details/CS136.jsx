@@ -1,9 +1,7 @@
 export default function CS136() {
   return (
     <div>
-      <p>
-        Study of data structures—trees, graphs, lists—and advanced programming techniques in C#.
-      </p>
+      <a href="https://catalog.williams.edu/csci/detail/?strm=&cn=136&crsid=010803&req_year=0">Learn More</a>
     </div>
   );
 }

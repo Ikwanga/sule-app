@@ -1,9 +1,7 @@
 export default function MATH200() {
   return (
     <div>
-      <p>
-        Discrete mathematics covering proofs, logic, sets, functions, and combinatorics.
-      </p>
+      <a href="https://catalog.williams.edu/math/detail/?strm=&cn=200&crsid=011655&req_year=0">Learn More</a>
     </div>
   );
 }

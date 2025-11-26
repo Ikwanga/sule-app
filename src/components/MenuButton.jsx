@@ -10,20 +10,16 @@ export default function MenuButton() {
     { label: "Courses", path: "/courses" },
     { label: "Projects", path: "/projects" },
     { label: "Interests", path: "/interests" },
-    { label: "Current", path: "/current" },
     { label: "Experience", path: "/experience" }
   ];
 
   return (
     <div className="menu-container">
-      {/* Hamburger icon */}
       <button className="menu-icon" onClick={() => setOpen(!open)}>
         <div className={open ? "bar bar1 active" : "bar bar1"}></div>
         <div className={open ? "bar bar2 active" : "bar bar2"}></div>
         <div className={open ? "bar bar3 active" : "bar bar3"}></div>
       </button>
-
-      {/* Dropdown */}
       {open && (
         <div className="menu-dropdown">
           {menuItems.map((item) => (

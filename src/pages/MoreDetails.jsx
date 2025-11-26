@@ -8,10 +8,7 @@ export default function MoreDetails({ data, type }) {
 
   return (
     <div className="detail-container">
-      {/* Page title */}
       <h2>{type} Details</h2>
-
-      {/* Item title (works for all types) */}
       <h3>
         {item.position ||
          item.title ||
@@ -19,8 +16,6 @@ export default function MoreDetails({ data, type }) {
          item.code ||
          item.name}
       </h3>
-
-      {/* Render the component that contains all detailed JSX */}
       <div className="details-content">
         {item.details}
       </div>
