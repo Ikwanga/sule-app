@@ -24,7 +24,7 @@ export default function AjalWebsite() {
           className="project-detail-image"
         />
         <figcaption className="project-detail-caption">
-          A preview of the Ajal Scholars Consultancy website.
+          <i>A preview of the Ajal Scholars Consultancy website.</i>
         </figcaption>
       </figure>
     </div>

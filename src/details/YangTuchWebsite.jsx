@@ -36,7 +36,7 @@ export default function YangTuchWebsite() {
           className="project-detail-image"
         />
         <figcaption className="project-detail-caption">
-          A preview of the YangTuch recruitment platform.
+          <i>A preview of the YangTuch recruitment platform.</i>
         </figcaption>
       </figure>
     </div>

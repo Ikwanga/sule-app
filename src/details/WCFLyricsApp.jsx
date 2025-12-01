@@ -23,7 +23,7 @@ export default function WCFLyricsApp() {
           className="project-detail-image"
         />
         <figcaption className="project-detail-caption">
-          A preview of the WCF Lyrics Web App.
+          <i>A preview of the WCF Lyrics Web App.</i>
         </figcaption>
       </figure>
     </div>
