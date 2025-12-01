@@ -3,7 +3,6 @@ export default function CollegeAccessMentor() {
     <div className="slide">
       
       <h2 className="slide-title exp-color">College Access Mentor — KenSAP</h2>
-
       <p>
         Served as a College Access Mentor at the Kenya Scholar Access Program (KenSAP),
         where I designed and taught a structured curriculum for students preparing for

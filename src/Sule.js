@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import MoreDetails from "./pages/MoreDetails.jsx";
 import Courses from "./pages/Courses.jsx";
 import Projects from "./pages/Projects.jsx";
-import Interests from "./pages/Interests.jsx";
 import Experience from "./pages/Experience.jsx";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
-import Home from "./components/Home.jsx"; 
+import Home from "./components/Home.jsx";
+import AboutMe from "./pages/AboutMe.jsx"; 
 import "./Layout.css";
 
 
@@ -29,14 +29,6 @@ import MATH200 from "./details/MATH200.jsx";
 // Campus involvement details
 import UbuntuAdvisoryGroup from "./details/UbuntuAdvisoryGroup.jsx";
 
-// Interests details
-import Entrepreneurship from "./details/Entrepreneurship.jsx";
-import Innovation from "./details/Innovation.jsx";
-import EnvironmentalPreservation from "./details/EnvironmentalPreservation.jsx";
-import CulturalPreservation from "./details/CulturalPreservation.jsx";
-import YouthDevelopment from "./details/YouthDevelopment.jsx";
-import Leadership from "./details/Leadership.jsx";
-
 
 function App() {
   const courses = [
@@ -48,27 +40,14 @@ function App() {
   const projects = [
     {
       title: "Ajal Scholars Consultancy Web Project",
-      description: "Designed content strategy and web architecture",
       details: <AjalWebsite />
     },
     {
       title: "Yangtuch Global Job Website",
-      description:
-        "Led UX and site struture design",
       details: <YangTuchWebsite />
     },
     { title: "Williams Christian Fellowship Lyrics Web App",
-      description: "Building a web app for worship sessions", 
     details: <WCFLyricsApp />}
-  ];
-
-  const interests = [
-    {title: "Entrepreneurship", details: <Entrepreneurship />}, 
-    {title: "Innovation", details: <Innovation /> },
-    {title: "Environmental preservation", details:<EnvironmentalPreservation />},
-    {title: "Cultural preservation", details: <CulturalPreservation />},
-    {title: "Youth development", details: <YouthDevelopment />},
-    {title: "Leadership", details: <Leadership />}
   ];
 
   const current = [
@@ -82,17 +61,14 @@ function App() {
   const experience = [
   {
     position: "Energy Officer (EO)",
-    context: "Sunking Solar – Saboti, Kenya (Nov 2023 – Feb 2024)",
     details: <EnergyOfficer/>
   },
   {
     position: "Computer Tutor",
-    context: "County Government of West Pokot – Kapenguria, Kenya (Feb – June 2024)",
     details: <ComputerTutor/>
   },
   {
     position: "College Access Mentor",
-    context: "Kenya Scholar Access Program (KenSAP) – Eldoret, Kenya (June – August 2025)",
     details: <CollegeAccessMentor/>
   },
   {
@@ -111,11 +87,9 @@ function App() {
     <div>
       <Header />
       <Routes>
-        {/* HOME */}
         <Route path="/" element={<Home />} />
         <Route path="/main-home" element={<Home />} />
-        
-        {/* PAGES */}
+        <Route path="/aboutme" element = {<AboutMe/>} onSelect={handleSelect} />
         <Route
           path="/courses"
           element={<Courses courses={courses} onSelect={handleSelect} />}
@@ -125,14 +99,9 @@ function App() {
           element={<Projects projects={projects} onSelect={handleSelect} />}
         />
         <Route
-          path="/interests"
-          element={<Interests interests={interests} onSelect={handleSelect} />}
-        />
-        <Route
           path="/experience"
           element={<Experience experience={experience} onSelect={handleSelect} />}
         />
-        {/* DETAIL PAGES (must be inside Routes) */}
         <Route
           path="/experience/:id"
           element={<MoreDetails data={experience} type="Experience" />}
@@ -144,10 +113,6 @@ function App() {
         <Route
           path="/courses/:id"
           element={<MoreDetails data={courses} type="Course" />}
-        />
-        <Route
-          path="/interests/:id"
-          element={<MoreDetails data={interests} type="Interest" />}
         />
         <Route
           path="/current/:id"

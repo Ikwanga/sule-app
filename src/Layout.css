@@ -406,3 +406,49 @@ a {
   transform: scale(1.06);
   cursor: pointer;
 }
+
+.project-detail-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.project-detail-text {
+  flex: 1;
+  min-width: 270px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.project-detail-figure {
+  flex: 0 0 450px; /* LARGE IMAGE */
+  margin: 0;
+  text-align: center;
+}
+
+.project-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.project-detail-caption {
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.styled-link {
+  color: #c57cff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.styled-link:hover {
+  color: orange;
+}
+
+

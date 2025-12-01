@@ -3,7 +3,6 @@ export default function ComputerTutor() {
     <div className="slide">
 
       <h2 className="slide-title exp-color">Computer Tutor — County Government of West Pokot</h2>
-
       <p>
         Served as a Computer Tutor at the Kapenguria Youth Empowerment Center,
         a government-supported youth hub offering free ICT access, digital training,

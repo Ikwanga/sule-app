@@ -8,14 +8,6 @@ export default function MoreDetails({ data, type }) {
 
   return (
     <div className="detail-container">
-      <h2>{type} Details</h2>
-      <h3>
-        {item.position ||
-         item.title ||
-         item.role ||
-         item.code ||
-         item.name}
-      </h3>
       <div className="details-content">
         {item.details}
       </div>

@@ -1,6 +1,7 @@
 export default function EnergyOfficer() {
   return (
     <div>
+      <h2 className="slide-title exp-color">Energy Officer (EO) — GreenLight Planet</h2>
       <p>
         Worked as an Energy Officer at Sun King Solar in Saboti, Kenya, selling
         hire-purchase solar products and supporting off-grid clients. Promoted

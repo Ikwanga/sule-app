@@ -7,9 +7,9 @@ export default function MenuButton() {
 
   const menuItems = [
     { label: "Home", path: "/main-home" },
-    { label: "Courses", path: "/courses" },
+    { label: "AboutMe", path: "/aboutme"},
+    { label: "Relevant Courses", path: "/courses" },
     { label: "Projects", path: "/projects" },
-    { label: "Interests", path: "/interests" },
     { label: "Experience", path: "/experience" }
   ];
 

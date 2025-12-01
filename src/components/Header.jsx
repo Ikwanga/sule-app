@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MenuButton from "./MenuButton";
+import MenuButton from "./MenuButton.jsx";
 import logo from "../components/images/logo2.png";
 
 export default function Header() {
@@ -12,9 +12,9 @@ export default function Header() {
         <h1 className="header-title">Portfolio Dashboard</h1>
       </div>
       <nav className="header-nav">
+        <Link to="/aboutme">About Me</Link>
         <Link to="/courses">Relevant Courses</Link>
         <Link to="/projects">Projects</Link>
-        <Link to="/interests">Interests</Link>
         <Link to="/experience">Experience</Link>
       </nav>
       <MenuButton />

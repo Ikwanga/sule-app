@@ -29,27 +29,27 @@ export default function Home() {
   return (
     <div className="global-background">
 
-      {/* TOP LEFT WELCOME BOX */}
+      {/* Top left welcome-text*/}
       <div className="welcome-text">
         <h3 style={{ color: "#c57cff", margin: 0 }}>Hi!</h3>
         <div className="typewriter-container">
           <span className="typewriter-line line1">
-          Welcome to my website! I created this to learn and to tell...
+          Curious Computer Science and Physics student!
           </span>
           <span className="typewriter-line line2">
-        ...to learn how to code and to tell of my endeavors.
+            |Tech + Physical Laws + Chess|
         </span>
         </div>
       </div>
 
-      {/* CENTER GLASS BOX WITH SLIDES */}
+      {/* Center animation box*/}
       <div className="center-box">
         <div className={`animated-slide ${direction}`}>
           {components[index]}
         </div>
       </div>
 
-      {/* BOTTOM RIGHT QUOTE */}
+      {/* Bottom right quote */}
       <div className="bottom-right-quote">
         <p>
           “To succeed, we must react efficiently to the quiet battles of thought
