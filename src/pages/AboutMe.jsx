@@ -3,7 +3,7 @@ import "../Layout.css";
 
 export default function AboutMe() {
   return (
-    <div>
+    <div className="about-me">
       <Link>
         <img src="./images/suleiman-ubuntu" alt="" />
         <p>

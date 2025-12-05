@@ -3,8 +3,8 @@ import "../Layout.css";
 
 export default function Experience({ experience }) {
   return (
-    <div className="courses">
-      <h2 className="courses-title">Experience</h2>
+    <div className="experience">
+      <h2 className="experience-title">Experience</h2>
 
       {experience.map((item, index) => (
         <Link

@@ -5,8 +5,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Campus from "./Campus";
 
-export default function Home() {
-  const components = [
+const components = [
     <Education />,
     <Experience />,
     <Projects />,
@@ -14,6 +13,8 @@ export default function Home() {
     <Campus />,
   ];
 
+
+export default function Home() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState("forward");
 
@@ -28,17 +29,15 @@ export default function Home() {
 
   return (
     <div className="global-background">
-
-      {/* Top left welcome-text*/}
+      {/* central welcome-text*/}
       <div className="welcome-text">
-        <h3 style={{ color: "#c57cff", margin: 0 }}>Hi!</h3>
-        <div className="typewriter-container">
-          <span className="typewriter-line line1">
+        <div>
+          <p>
           Curious Computer Science and Physics student!
-          </span>
-          <span className="typewriter-line line2">
+          </p>
+          <p>
             |Tech + Physical Laws + Chess|
-        </span>
+        </p>
         </div>
       </div>
 

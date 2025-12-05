@@ -1,10 +1,11 @@
 /*global background*/
 .global-background {
   position: relative;
-  background-image: url("./components/images/sule-sam.jpg");
+  background-image: url("./components/images/galaxy.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -12,16 +13,55 @@
   justify-content: center;
 }
 
-.global-background::before {
+.courses, .about-me, .experience, .projects {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+}
+
+.courses {
+  background-image: url("./components/images/study-time.jpg");
+}
+
+.about-me {
+  background-image: url("./components/images/coding-desk.jpg");
+}
+
+.experience {
+  background-image: url("./components/images/coding-desk.jpg");
+}
+
+.projects {
+  background-image: url("./components/images/coding-desk.jpg");
+}
+
+/* Improved overlay with better blending */
+.global-background::before,
+.courses::before,
+.about-me::before,
+.experience::before,
+.projects::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(4px);
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 26, 68, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  backdrop-filter: blur(2px);
   z-index: 0;
 }
 
-.global-background > * {
+.global-background > *,
+.courses > *,
+.about-me > *,
+.experience > *,
+.projects > * {
   position: relative;
   z-index: 1;
 }
@@ -39,53 +79,77 @@ a {
   color: inherit;
 }
 
-/*course cards*/
-.courses {
-  padding: 20px;
-  max-width: 700px;
-  margin: 25px auto;
+/*course cards - content width constraints*/
+.courses > *,
+.experience > *,
+.projects > * {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .courses-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
   color: #ff9f45;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 .course-item {
-  background-color: #142a66;
-  border: 1px solid #394b8a;
+  background-color: rgba(20, 42, 102, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(57, 75, 138, 0.6);
   border-radius: 12px;
-  padding: 14px 18px;
-  margin-bottom: 16px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .course-item:hover {
-  transform: translateY(-3px);
-  background-color: #1b2f73;
+  transform: translateY(-4px);
+  background-color: rgba(27, 47, 115, 0.9);
   border-color: #c57cff;
-  box-shadow: 0 0 10px rgba(197, 124, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(197, 124, 255, 0.4);
 }
 
-.course-code { font-size: 20px; font-weight: bold; color: #ff9f45; }
-.course-name { flex: 1; margin-left: 15px; font-size: 17px; color: #f5eaff; }
-.course-icon .book-icon { font-size: 24px; color: #c57cff; }
+.course-code { 
+  font-size: 20px; 
+  font-weight: bold; 
+  color: #ff9f45;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.course-name { 
+  flex: 1; 
+  margin-left: 15px; 
+  font-size: 17px; 
+  color: #f5eaff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.course-icon .book-icon { 
+  font-size: 24px; 
+  color: #c57cff; 
+}
 
 /*header styling*/
 .header {
-  background-color: #0a1a44;
+  background-color: rgba(10, 26, 68, 0.95);
+  backdrop-filter: blur(12px);
   padding: 14px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #394b8a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-left {
@@ -149,7 +213,8 @@ a {
   position: absolute;
   top: 55px;
   right: 0;
-  background-color: #142a66;
+  background-color: rgba(20, 42, 102, 0.98);
+  backdrop-filter: blur(12px);
   border: 1px solid #394b8a;
   border-radius: 10px;
   padding: 12px;
@@ -173,7 +238,8 @@ a {
 
 /* footer styling */
 .footer {
-  background-color: #0a1a44;
+  background-color: rgba(10, 26, 68, 0.95);
+  backdrop-filter: blur(12px);
   color: #ffffff;
   padding: 30px 0;
   margin-top: 40px;
@@ -225,12 +291,12 @@ a {
   width: 45%;
   max-width: 500px;
   min-height: 150px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  background: rgba(20, 42, 102, 0.65);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid rgba(197, 124, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   color: white;
   text-align: justify;
   display: flex;
@@ -243,13 +309,15 @@ a {
   font-weight: 700;
   margin-bottom: 14px;
   color: #ff9f45;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
 
 .slide ul { list-style: none; padding: 0; }
 .slide li {
   font-size: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #f5eaff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
 .animated-slide {
@@ -266,7 +334,7 @@ a {
   100% { transform: translateX(0); opacity: 1; }
 }
 
-/* top-left welcome text*/
+/* welcome text*/
 .welcome-text {
   display: flex;
   gap: 1rem;
@@ -274,28 +342,14 @@ a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   font-size: 18px;
   max-width: 90%;
-}
-
-.typewriter-container {
-  position: relative;
-  width: 100%;
-  max-width: 60ch;
-  white-space: normal;
-}
-
-.typewriter-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 18px;
-  opacity: 0;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
 }
 
 .line1 {
@@ -334,7 +388,52 @@ a {
   max-width: 350px;
   text-align: right;
   font-size: 18px;
-  opacity: 0.85;
+  opacity: 0.9;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Detail pages container */
+.detail-container {
+  padding: 100px 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(20, 42, 102, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  min-height: calc(100vh - 200px);
+  border: 1px solid rgba(197, 124, 255, 0.2);
+}
+
+.details-content {
+  padding: 20px;
+  color: #f5eaff;
+  line-height: 1.8;
+}
+
+.details-content h2 {
+  color: #ff9f45;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.details-content h3 {
+  color: #c57cff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.details-content ul {
+  padding-left: 20px;
+}
+
+.details-content li {
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.details-content p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 /*mobile devices responsiveness*/
@@ -372,22 +471,32 @@ a {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 2vh;
-    left: 2vw;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
-    font-size: 4vw;
-    max-width: 80vw;
-}
-
-  .typewriter-container {
-    max-width: 100vw;
-    white-space: normal;
+    font-size: 18px;
+    max-width: 90%;
+    text-align: center;
   }
 
-  .typewriter-line {
-    font-size: 3vw;
+  .bottom-right-quote {
+    display: none;
+  }
+
+  .detail-container {
+    padding: 80px 15px 30px;
+  }
+
+  .project-detail-container {
+    padding: 15px;
+  }
+
+  .project-detail-figure {
+    flex: 1 1 100%;
   }
 }
+
 .course-link {
   color: #c57cff;
   background-color: transparent;
@@ -397,6 +506,7 @@ a {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.25s ease-in-out;
+  display: inline-block;
 }
 
 .course-link:hover {
@@ -421,10 +531,11 @@ a {
   min-width: 270px;
   font-size: 18px;
   line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 .project-detail-figure {
-  flex: 0 0 450px; /* LARGE IMAGE */
+  flex: 0 0 450px;
   margin: 0;
   text-align: center;
 }
@@ -433,12 +544,14 @@ a {
   width: 100%;
   height: auto;
   border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
 .project-detail-caption {
   margin-top: 8px;
   font-size: 15px;
   opacity: 0.8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 .styled-link {
@@ -451,4 +564,40 @@ a {
   color: orange;
 }
 
+/* Experience and Projects pages - use same title style */
+.experience-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ff9f45;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
 
+/* Color classes for slides */
+.edu-color { color: #ff9f45; }
+.exp-color { color: #c57cff; }
+.proj-color { color: #4dabf7; }
+.skills-color { color: #51cf66; }
+.campus-color { color: #ffa94d; }
+.addl-color { color: #ff6b9d; }
+
+.experience-section {
+  margin-bottom: 30px;
+}
+
+.experience-role {
+  color: #ff9f45;
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.experience-list {
+  padding-left: 20px;
+}
+
+.experience-list li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}

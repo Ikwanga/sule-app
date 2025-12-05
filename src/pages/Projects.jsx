@@ -3,7 +3,7 @@ import "../Layout.css";
 
 export default function Projects({ projects }) {
   return (
-    <div className="courses">
+    <div className="projects">
       <h2 className="courses-title">Projects</h2>
 
       {projects.map((item, index) => (
